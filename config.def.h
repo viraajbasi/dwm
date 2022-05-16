@@ -4,7 +4,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;   	/* 0: systray in the right corner, >0: systray on left of status text */
@@ -13,10 +13,12 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
+
 /* volume keys*/
 static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
+
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -30,11 +32,22 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
+/* applications */
 static const char *screenshot[] = {
     "flameshot",
     "gui",
     "-p",
     "/home/viraaj/Pictures/Screenshots",
+    NULL
+};
+
+static const char *pcmanfm[] = {
+    "pcmanfm",
+    NULL
+};
+
+static const char *firefox[] = {
+    "firefox",
     NULL
 };
 
@@ -93,7 +106,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -108,10 +121,12 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-    { 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol} },
+    { 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
     { 0, XF86XK_AudioMute, spawn, {.v = mutevol }},
-    { 0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol} },
-    { 0, XK_Print, spawn, {.v = screenshot} },
+    { 0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
+    { 0, XK_Print, spawn, {.v = screenshot } },
+    { MODKEY, XK_e, spawn, {.v = pcmanfm } },
+    { MODKEY, XK_r, spawn, {.v = firefox } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
