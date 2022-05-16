@@ -51,6 +51,21 @@ static const char *firefox[] = {
     NULL
 };
 
+static const char *shutcmd[] = {
+    "sudo",
+    "shutdown",
+    "-h",
+    "now",
+    NULL
+};
+
+static const char *rebootcmd[] = {
+    "sudo",
+    "reboot",
+    "now",
+    NULL
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -128,6 +143,8 @@ static Key keys[] = {
     { 0, XK_Print, spawn, {.v = screenshot } },
     { MODKEY, XK_e, spawn, {.v = pcmanfm } },
     { MODKEY, XK_r, spawn, {.v = firefox } },
+    { MODKEY|ShiftMask, XK_s, spawn, {.v = shutcmd } },
+    { MODKEY|ShiftMask, XK_r, spawn, {.v = rebootcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
