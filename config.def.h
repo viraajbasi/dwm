@@ -1,7 +1,5 @@
 /* See LICENSE file for copyright and license details. */
 
-#include <X11/XF86keysym.h>
-
 /* appearance */
 static const unsigned int borderpx  = 5;        /* border pixel of windows */
 static const unsigned int gappx     = 15;        /* gaps between windows */
@@ -13,12 +11,6 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;     /* 0 means no bar */
 static const int topbar             = 1;     /* 0 means bottom bar */
-
-/* volume keys*/
-static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
-
 static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=12" };
 static const char dmenufont[]       = "Caskaydia Cove Nerd Font:size=12";
 static const char col_gray1[]       = "#222222";
@@ -30,40 +22,6 @@ static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
-};
-
-/* applications */
-static const char *screenshot[] = {
-    "flameshot",
-    "gui",
-    "-p",
-    "/home/viraaj/Pictures/Screenshots",
-    NULL
-};
-
-static const char *pcmanfm[] = {
-    "pcmanfm",
-    NULL
-};
-
-static const char *firefox[] = {
-    "firefox",
-    NULL
-};
-
-static const char *shutcmd[] = {
-    "sudo",
-    "shutdown",
-    "-h",
-    "now",
-    NULL
-};
-
-static const char *rebootcmd[] = {
-    "sudo",
-    "reboot",
-    "now",
-    NULL
 };
 
 /* tagging */
@@ -137,15 +95,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
 	{ MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
-    { 0, XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-    { 0, XF86XK_AudioMute, spawn, {.v = mutevol }},
-    { 0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol } },
-    { 0, XK_Print, spawn, {.v = screenshot } },
-    { MODKEY, XK_e, spawn, {.v = pcmanfm } },
-    { MODKEY, XK_r, spawn, {.v = firefox } },
-    { MODKEY|ShiftMask, XK_s, spawn, {.v = shutcmd } },
-    { MODKEY|ShiftMask, XK_r, spawn, {.v = rebootcmd } },
-	TAGKEYS(                        XK_1,                      0)
+    TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
