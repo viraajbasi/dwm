@@ -19,8 +19,8 @@ static const char *upvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%", 
 static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL };
 
-static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=10" };
-static const char dmenufont[]       = "Caskaydia Cove Nerd Font:size=10";
+static const char *fonts[]          = { "Caskaydia Cove Nerd Font:size=12" };
+static const char dmenufont[]       = "Caskaydia Cove Nerd Font:size=12";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
