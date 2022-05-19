@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CMD="$(iwctl station wlan0 show | grep "State" | awk '{print $2}')"
+SSID="$(iwctl station wlan0 show | grep "Connected network" | awk '{print $3}')"
+
+if [[ $CMD =~ "connected" ]]; then
+    echo -e "直 $SSID"
+else
+    echo "睊$SSID"
+fi
