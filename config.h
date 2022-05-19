@@ -34,6 +34,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
     { "firefox", "Toolkit", "Picture-in-Picture", ~0, 1, -1},
+    { "", "", "Picture-in-picture", ~0, 1, -1 },
 };
 
 /* layout(s) */
