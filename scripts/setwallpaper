@@ -3,6 +3,6 @@
 cp $1 $HOME/.local/share/background
 wal -i $1 -o "rebuilddwm" -o "rebuildst" -o "rebuilddmenu"
 wal_steam -w
-#pkill st
-#pkill dmenu
-#pkill dwm
+killall st
+killall dmenu
+killall dwm
