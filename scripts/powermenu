@@ -1,15 +1,13 @@
 #!/bin/bash
 
 function powermenu {
-    OPTIONS="Cancel\nShutdown\nRestart\nSleep\nLock"
+    OPTIONS="Cancel\nShutdown\nRestart\nLock"
     SELECTED=$(echo -e $OPTIONS | dmenu)
 
     if [[ $SELECTED = "Shutdown" ]]; then
         poweroff
     elif [[ $SELECTED = "Restart" ]]; then
         reboot
-    elif [[ $SELECTED = "Sleep" ]]; then
-        systemctl suspend
     elif [[ $SELECTED = "Lock" ]]; then
         slock
     elif [[ $SELECTED = "Cancel" ]]; then
