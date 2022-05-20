@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include "/home/viraaj/.cache/wal/colors-wal-dwm.h"
+
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 10;        /* gaps between windows */
@@ -19,11 +21,7 @@ static char normfgcolor[]           = "#bbbbbb";
 static char selfgcolor[]            = "#eeeeee";
 static char selbordercolor[]        = "#005577";
 static char selbgcolor[]            = "#005577";
-static char *colors[][3] = {
-    /*               fg           bg           border   */
-    [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
-    [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
-};
+static const char col_urgborder[]   = "#ff0000";
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
