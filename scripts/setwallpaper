@@ -3,6 +3,9 @@
 cp $1 $HOME/.local/share/background
 wal -i $1 -o "rebuilddwm" -o "rebuildst" -o "rebuilddmenu"
 wal_steam -w
+chrome-generate-theme
+killall brave
+killall steam
 killall st
 killall dmenu
 killall dwm
