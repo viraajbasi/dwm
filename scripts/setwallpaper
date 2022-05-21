@@ -1,9 +1,14 @@
 #!/bin/bash
 
+rm $HOME/.local/share/background
 cp $1 $HOME/.local/share/background
-wal -i $1 -o "rebuilddwm" -o "rebuildst" -o "rebuilddmenu"
+wal -i $1
+wpg -s $1
 wal_steam -w
 chrome-generate-theme
+rebuilddwm
+rebuildst
+rebuilddmenu
 killall brave
 killall steam
 killall st
