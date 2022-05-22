@@ -1,7 +1,0 @@
-#!/bin/bash
-
-LINE="$(ps -eo pcpu | grep -vE '^\s*(0.0|%CPU)' | sed -n '1h;$!H;$g;s/\n/ +/gp')"
-CPU=$(bc <<< $LINE)
-RAM=$(free -m -h --si | grep '^Mem' | awk '{print $3}')
-
-echo -e " $CPU%, $RAM"
