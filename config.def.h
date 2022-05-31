@@ -17,8 +17,8 @@ static const int topbar             = 1;     /* 0 means bottom bar */
 static const int user_bh            = 25;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 #define ICONSIZE bh   /* icon size */
 #define ICONSPACING (bh - 4) /* space between icon and title */
-static const char *fonts[]          = { "Karla:size=16", "JoyPixels:pixelsize=16:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Karla:size=16";
+static const char *fonts[]          = { "Inter:size=16", "JoyPixels:pixelsize=16:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Inter:size=16";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
