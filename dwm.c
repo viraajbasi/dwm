@@ -707,6 +707,8 @@ clientmessage(XEvent *e)
 			resizebarwin(selmon);
 			updatesystray();
 			setclientstate(c, NormalState);
+            XClassHint ch = {"dwmsystray", "dwmsystray"};
+            XSetClassHint(dpy, c->win, &ch);
 		}
 		return;
 	}
