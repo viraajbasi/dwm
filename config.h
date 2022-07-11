@@ -38,7 +38,9 @@ static const Rule rules[] = {
     { "firefox", "Toolkit", "Picture-in-Picture", ~0, 1, -1, 0 },
     { "", "", "Picture-in-picture", ~0, 1, -1, 0 },
     { "st", NULL, NULL, 0, 0, 1, 0, -1 },
-    { NULL, NULL, "Event Tester", 0, 0, 0, 1 }
+    { NULL, NULL, "Event Tester", 0, 0, 0, 1 },
+    { "alacritty", NULL, NULL, 0, 0, 1, 0, -1 },
+
 };
 
 /* layout(s) */
@@ -73,8 +75,6 @@ static const char *roficmd[] = { "rofi", "-show", "combi", "-show-icons", NULL }
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = roficmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -89,8 +89,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -114,7 +113,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	//{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
 /* button definitions */
