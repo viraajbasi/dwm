@@ -1,6 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 
-#include "/home/viraaj/.cache/wal/colors-wal-dwm.h"
+#include "colors-wal-dwm.h"
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
