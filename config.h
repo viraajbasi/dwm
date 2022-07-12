@@ -60,6 +60,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", "dmenumon", NULL };
+static const char *powercmd[] = { "powermenu", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -109,5 +110,6 @@ static Button buttons[] = {
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
+    { ClkStatusText,        0,              Button2,        spawn,          {.v = powercmd } },
 };
 
