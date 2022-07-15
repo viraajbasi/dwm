@@ -30,6 +30,7 @@ static const Rule rules[] = {
     { "",         "",         "Picture-in-picture", ~0, 1, -1 },
     { "Gimp",     NULL,       NULL,       0,            1,           -1 },
     { "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+    { "origin.exe", NULL, NULL, 0, 1, -1 },
 
 };
 
