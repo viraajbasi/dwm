@@ -10,7 +10,7 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const char panel[][20]       = { "xfce4-panel", "Xfce4-panel" }; /* name & cls of panel win */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "SF Pro Display:size=14", "JoyPixels:size=14:antialias=true:autohint=true" };
+static const char *fonts[]          = { "Inter:size=10", "JoyPixels:size=10:antialias=true:autohint=true" };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
