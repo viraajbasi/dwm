@@ -10,6 +10,7 @@ static const int swallowfloating    = 0;        /* 1 means swallow floating wind
 static const char panel[][20]       = { "xfce4-panel", "Xfce4-panel" }; /* name & cls of panel win */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh            = 10;        /* 2 is the default spacing around the bar's font */
 #define ICONSIZE 16   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
 static const char *fonts[]          = { "Inter:size=10", "JoyPixels:size=10:antialias=true:autohint=true" };
