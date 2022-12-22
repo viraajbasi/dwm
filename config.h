@@ -22,14 +22,15 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance   title                   tags mask            isfloating  isterminal  noswallow  monitor */
-	{ "Firefox",        NULL,      NULL,                   1 << 8,              0,          0,          -1,        -1 },
+	/* class            instance   title                   tags mask            isfloating  isterminal  noswallow  monitor */
 	{ "St",             NULL,      NULL,                   0,                   0,          1,           0,        -1 },
 	{ NULL,             NULL,      "Event Tester",         0,                   0,          0,          -1,        -1 }, /* xev */
     { "firefox",        "Toolkit", "Picture-in-Picture",   ~0,                  1,          0,          -1,        -1 },
     { NULL,             NULL,      "Picture-in-picture",   ~0,                  1,          0,          -1,        -1 },
 	{ "xfce4-panel",    NULL,      NULL,                   ~0,                  1,          0,          -1,        -1 },
 	{ "Xfce4-panel",    NULL,      NULL,                   ~0,                  1,          0,          -1,        -1 },
+    { "galculator",     NULL,      NULL,                   0,                   1,          0,          -1,        -1 },
+    { "Galculator",     NULL,      NULL,                   0,                   1,          0,          -1,        -1 },
 
 };
 
