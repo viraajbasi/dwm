@@ -681,6 +681,8 @@ clientmessage(XEvent *e)
 			updatesizehints(c);
 			updatesystrayicongeom(c, wa.width, wa.height);
 			XAddToSaveSet(dpy, c->win);
+            XClassHint ch = {"dwmsystray", "dwmsystray"};
+            XSetClassHint(dpy, c->win, &ch);
 			XSelectInput(dpy, c->win, StructureNotifyMask | PropertyChangeMask | ResizeRedirectMask);
 			XReparentWindow(dpy, c->win, systray->win, 0, 0);
 			/* use parents background color */
