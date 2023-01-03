@@ -18,7 +18,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int user_bh            = 10;        /* 2 is the default spacing around the bar's font */
 #define ICONSIZE 16   /* icon size */
 #define ICONSPACING 5 /* space between icon and title */
-static const char *fonts[]          = { "Inter:size=10:size=10:antialias=true:autohint=true", "Apple Color Emoji:size=10:antialias=true:autohint=true", "Symbols Nerd Font:size=10:antialias=true:autohint=true" };
+static const char *fonts[]          = { "SF Pro Display:size=10:size=10:antialias=true:autohint=true", "Apple Color Emoji:size=10:antialias=true:autohint=true", "Symbols Nerd Font:size=10:antialias=true:autohint=true" };
 
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
