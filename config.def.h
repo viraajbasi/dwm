@@ -1,5 +1,6 @@
 /* See LICENSE file for copyright and license details. */
 #include "mocha.h"
+#include "fibonacci.c"
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
@@ -49,10 +50,13 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
+    /* first entry is default */
+	{ "[\\]",      dwindle },
+ 	{ "[@]",      spiral },
 	{ "|||",      col },
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[]=",      tile },
 	{ "[M]",      monocle },
+	{ "><>",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -83,6 +87,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_F2,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_F3,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_F4,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_F5,      setlayout,      {.v = &layouts[4]} },
+	{ MODKEY,                       XK_F6,      setlayout,      {.v = &layouts[5]} },
 	{ MODKEY,                       XK_space,  togglefloating, {0} },
 	{ MODKEY|ShiftMask,             XK_f,      togglefullscr,  {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
