@@ -275,6 +275,7 @@ static void sigchld(int unused);
 static void sighup(int unused);
 static void sigterm(int unused);
 static Monitor *systraytomon(Monitor *m);
+static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
 static void tile(Monitor *m);
@@ -2224,6 +2225,18 @@ sigterm(int unused)
 {
 	Arg a = {.i = 0};
 	quit(&a);
+}
+
+void
+spawn(const Arg *arg)
+{
+    if (fork() == 0) {
+        if (dpy)
+            close(ConnectionNumber(dpy));
+        setsid();
+        execvp(((char **)arg->v)[0], (char **)arg->v);
+        die("dwm: execvp '%s' failed:", ((char **)arg->v)[0]);
+    }
 }
 
 void
