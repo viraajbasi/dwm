@@ -4,7 +4,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int minwsz    = 20;       /* Minimal heigt of a client for smfact */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const char panel[][20]       = { "xfce4-panel", "Xfce4-panel" }; /* name & cls of panel win */
